@@ -1,8 +1,6 @@
 # dotfiles
 macOS dotfiles🍻
 
----
-
 + Disable Spotlight Index
 
 ```
