@@ -3,6 +3,6 @@ macOS dotfiles🍻
 
 + Disable Spotlight Index
 
-```
-sudo mdutil -a -i off
-```
+  ```
+  sudo mdutil -a -i off
+  ```
