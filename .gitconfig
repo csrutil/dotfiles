@@ -1,0 +1,37 @@
+[core]
+	filemode = false
+	excludesfile = /Users/sample/.gitignore
+	autocrlf = input
+	precomposeUnicode = true
+[user]
+	name = sample
+	email = sample@protonmail.com
+[branch]
+	autosetuprebase = always
+[alias]
+  logs = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s %Cgreen(%cr)' --abbrev-commit
+  sts = status
+  cmt = commit
+  brc = branch
+  cho = checkout
+  dif = diff
+  lgp = log -p
+  wst = stash
+  regret = reset HEAD^
+  latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short) [%(committerdate:short)] %(contents)\"
+  ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad %C(red)%d %C(reset)%s %C(green)[%cn]\" --decorate --date=short
+[diff]
+	color = auto
+[color]
+	ui = true
+[credential]
+	helper = store
+[push]
+	default = matching
+[http]
+	#proxy = socks5://127.0.0.1:1080
+	postBuffer = 2097152000
+[https]
+	#proxy = socks5://127.0.0.1:1080
+  postBuffer = 2097152000
+
