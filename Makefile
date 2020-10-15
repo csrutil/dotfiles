@@ -6,7 +6,7 @@ dot:
 	cp .* ~/
 
 launchagents:
-	cp LaunchAgents/* /Library/LaunchAgents/
+	cp LaunchDaemons/* /Library/LaunchDaemons
 
 clean:
 		@echo "Cleaning up..."
