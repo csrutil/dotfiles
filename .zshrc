@@ -190,3 +190,7 @@ fi
 # https://github.com/rubyjs/libv8/issues/282#issuecomment-570285528
 # export CXX=clang++
 # export GYPFLAGS=-Dmac_deployment_target=10.15
+
+# RUBY_BUILD_MIRROR_URL=http://localhost:9000/ruby-2.7.2.tar.bz2 \
+#   RUBY_CONFIGURE_OPTS="--disable-install-doc --with-jemalloc --with-openssl-dir=$(brew --prefix libressl)" \
+#   rbenv install 2.7.2 --verbose
