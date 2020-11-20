@@ -31,7 +31,7 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 # PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 autoload -U colors && colors
 # PROMPT="%{$fg[red]%}%n@%M %{$fg[yellow]%}%~ %{$reset_color%}"
-PROMPT="%{$fg[red]%}%n %{$fg[yellow]%}%~ %{$reset_color%}"
+PROMPT="%{$fg[red]%}%n@%M %{$fg[yellow]%}%~ %{$reset_color%}"
 
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -47,6 +47,9 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt share_history          # share command history data
 
 set_proxy() {
+  # export HTTP_PROXY="http://127.0.0.1:7890"
+  # export HTTPS_PROXY="http://127.0.0.1:7890"
+  # export ALL_PROXY="http://127.0.0.1:7890"
   export HTTP_PROXY="socks5://127.0.0.1:7891"
   export HTTPS_PROXY="socks5://127.0.0.1:7891"
   export ALL_PROXY="socks5://127.0.0.1:7891"
@@ -94,15 +97,17 @@ flush_dns() {
   sudo mDNSResponderHelper
 }
 
-# FUNCTIONS
 seed() {
   # date +%s | sha256sum | base64 | head -c 32 ; echo
-  seed=$(date | shasum | base64 | head -c $1 ; echo)
+  # seed=$(date | shasum | base64 | head -c $1 ; echo)
+  seed=$(openssl rand -base64 $1)
   echo $seed | pbcopy
   echo $seed
 }
-# FUNCTIONS
 
+set_new_mac() {
+  sudo ifconfig en0 ether $(openssl rand -hex 6 | sed 's%\(..\)%\1:%g; s%.$%%')
+}
 
 # ALIAS
 alias axel="axel --alternate --insecure -n 10"

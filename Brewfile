@@ -42,3 +42,5 @@ brew install wrk
 brew install xmlrpc-c
 brew install xz
 brew install zlib
+brew install libressl
+# install_ruby 2.7.2
