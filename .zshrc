@@ -50,9 +50,9 @@ set_proxy() {
   # export HTTP_PROXY="http://127.0.0.1:7890"
   # export HTTPS_PROXY="http://127.0.0.1:7890"
   # export ALL_PROXY="http://127.0.0.1:7890"
-  export HTTP_PROXY="socks5://127.0.0.1:7891"
-  export HTTPS_PROXY="socks5://127.0.0.1:7891"
-  export ALL_PROXY="socks5://127.0.0.1:7891"
+  export HTTP_PROXY="socks5://10.0.50.157:7891"
+  export HTTPS_PROXY="socks5://10.0.50.157:7891"
+  export ALL_PROXY="socks5://10.0.50.157:7891"
 }
 
 unset_proxy() {
@@ -103,6 +103,11 @@ seed() {
   seed=$(openssl rand -base64 $1)
   echo $seed | pbcopy
   echo $seed
+}
+
+clean_efi() {
+  sudo rm -rf .Spotlight-V100 .Trashes .fseventsd
+  sudo find . -name '._*' -exec rm -rf {} \;
 }
 
 set_new_mac() {
@@ -207,3 +212,5 @@ fi
 # RUBY_BUILD_MIRROR_URL=http://localhost:9000/ruby-2.7.2.tar.bz2 \
 #   RUBY_CONFIGURE_OPTS="--disable-install-doc --with-jemalloc --with-openssl-dir=$(brew --prefix libressl)" \
 #   rbenv install 2.7.2 --verbose
+
+# export PATH=$PATH:~/Documents/go/bin
