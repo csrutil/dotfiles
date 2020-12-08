@@ -108,6 +108,7 @@ seed() {
 clean_efi() {
   sudo rm -rf .Spotlight-V100 .Trashes .fseventsd
   sudo find . -name '._*' -exec rm -rf {} \;
+  sudo find . -name '.DS_Store' -exec rm -rf {} \;
 }
 
 set_new_mac() {
