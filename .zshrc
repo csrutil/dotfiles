@@ -76,6 +76,19 @@ set_ram_disk() {
   diskutil erasevolume HFS+ Ram `hdiutil attach -nomount ram://8388608`
 }
 
+set_random_mac() {
+  ifconfig en0 | grep ether
+
+  # generate a new random one
+  addr=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+
+  # set spoofed address (substitute with generated one from above)
+  sudo ifconfig en0 ether $addr
+
+  # make sure new address returns
+  ifconfig en0 | grep ether
+}
+
 remove_set_ram_disk() {
   diskutil umount /Volumes/Ram
 }
@@ -108,7 +121,6 @@ seed() {
 clean_efi() {
   sudo rm -rf .Spotlight-V100 .Trashes .fseventsd
   sudo find . -name '._*' -exec rm -rf {} \;
-  sudo find . -name '.DS_Store' -exec rm -rf {} \;
 }
 
 set_new_mac() {
