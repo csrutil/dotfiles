@@ -1,33 +1,18 @@
-install annie
-install autoconf
-install axel
-install bison
-install bzip2
-install curl
-install dshb
-install htop
-install icu4c
-install iperf3
-install jemalloc
-install jpeg
-install jq
-install libedit
-install libiconv
-install libpng
-install libressl
-install libxml2
-install libzip
-install pidof
-install python@3.8
-install re2c
-install redis
-install rtorrent
-install stress
-install tidy-html5
-install tmux
-install tree
-install unrar
-install wget
-install wrk
-install youtube-dl
-install zlib
+brew install stress
+brew install xz
+brew install tmux
+brew install tree
+brew install wget
+brew install wrk
+brew install redis
+brew install 7z
+brew install iperf3
+brew install pidof
+brew install libressl
+brew install readline
+brew install zstd
+brew install axel
+brew install htop
+brew install jemalloc
+brew install jq
+brew install bzip2
