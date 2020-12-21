@@ -5,7 +5,7 @@ brew install tree
 brew install wget
 brew install wrk
 brew install redis
-brew install 7z
+# brew install 7z
 brew install iperf3
 brew install pidof
 brew install libressl
