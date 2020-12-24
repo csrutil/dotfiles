@@ -2,7 +2,7 @@
 
 macOS dotfiles🍻
 
-# Disable Spotlight Index
+## Disable Spotlight Index
 
 ```
 # https://gist.github.com/csrutil/b2cce932dda8b226f37be2880215aee6
@@ -26,7 +26,7 @@ sudo spctl --master-disable
 ```
 
 
-# Fonts
+## Fonts
 
 https://github.com/googlefonts/Inconsolata
 https://github.com/vjpr/monaco-bold
