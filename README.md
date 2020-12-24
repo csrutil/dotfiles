@@ -28,5 +28,5 @@ sudo spctl --master-disable
 
 ## Fonts
 
-https://github.com/googlefonts/Inconsolata
-https://github.com/vjpr/monaco-bold
+- https://github.com/googlefonts/Inconsolata
+- https://github.com/vjpr/monaco-bold
