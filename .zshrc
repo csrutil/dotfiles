@@ -1,13 +1,24 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export DISABLE_AUTO_UPDATE=true
+# ohmyzsh
 export DISABLE_UPDATE_PROMPT=true
-export HOMEBREW_NO_AUTO_UPDATE=1
+export DISABLE_AUTO_UPDATE=true
+
+# cocoapods
 export COCOAPODS_DISABLE_STATS=true
-export HOMEBREW_NO_ANALYTICS=1
+
+# npm
 export NO_UPDATE_NOTIFIER=true
+
+# spring
 export DISABLE_SPRING=true
+
+# homebrew
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS_THIS_RUN=1
+export HOMEBREW_NO_ANALYTICS_MESSAGE_OUTPUT=1
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -45,6 +56,10 @@ setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt share_history          # share command history data
+
+ps1_anonymous(){
+  export PROMPT="%{$fg[red]%}%M %{$fg[yellow]%}%~ %{$reset_color%}"
+}
 
 set_proxy() {
   export HTTP_PROXY="http://127.0.0.1:7890"
@@ -170,10 +185,10 @@ if [ -d $HOME/.pyenv ] ; then
 fi
 
 # Postgres
-PGHOME=/Applications/Postgres.app/Contents/Versions/latest
-if [ -d $PGHOME ] ; then
-  export PATH="$PGHOME/bin:$PATH"
-  export DYLD_FALLBACK_LIBRARY_PATH=$PGHOME/lib
+PG_HOME=/Applications/Postgres.app/Contents/Versions/latest
+if [ -d $PG_HOME ] ; then
+  export PATH="$PG_HOME/bin:$PATH"
+  export DYLD_FALLBACK_LIBRARY_PATH=$PG_HOME/lib
 fi
 
 # mysql
@@ -194,15 +209,10 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 fi
 
 # lunchy
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
-fi
-
-# v2ray
-if [ -d /usr/local/v2ray ] ; then
-  export PATH=$PATH:/usr/local/v2ray
-fi
+# LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+# if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+#   . $LUNCHY_DIR/lunchy-completion.zsh
+# fi
 
 # platform-tools
 if [ -d /usr/local/platform-tools ] ; then
@@ -230,3 +240,7 @@ fi
 #   rbenv install 2.7.2 --verbose
 
 # export PATH=$PATH:~/Documents/go/bin
+
+
+export MONGO_URL='mongodb://127.0.0.1:27017/ekohe6_staging'
+export EDITOR="emacs -nw"
