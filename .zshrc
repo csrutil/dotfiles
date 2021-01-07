@@ -240,7 +240,4 @@ fi
 #   rbenv install 2.7.2 --verbose
 
 # export PATH=$PATH:~/Documents/go/bin
-
-
-export MONGO_URL='mongodb://127.0.0.1:27017/ekohe6_staging'
 export EDITOR="emacs -nw"
