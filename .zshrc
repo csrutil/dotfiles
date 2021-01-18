@@ -61,6 +61,14 @@ ps1_anonymous(){
   export PROMPT="%{$fg[red]%}%M %{$fg[yellow]%}%~ %{$reset_color%}"
 }
 
+# https://gist.github.com/phette23/5270658
+DISABLE_AUTO_TITLE="true"
+
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+
 set_proxy() {
   export HTTP_PROXY="http://127.0.0.1:7890"
   export HTTPS_PROXY="http://127.0.0.1:7890"
