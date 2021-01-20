@@ -239,6 +239,11 @@ if [ -d /Applications/Wireshark.app/Contents/MacOS ] ; then
   export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS/
 fi
 
+if [ -d /opt/homebrew ]; then
+  export HOMEBREW_HOME=/opt/homebrew
+  export PATH=$PATH:$HOMEBREW_HOME/bin
+fi
+
 # https://github.com/rubyjs/libv8/issues/282#issuecomment-570285528
 # export CXX=clang++
 # export GYPFLAGS=-Dmac_deployment_target=10.15
