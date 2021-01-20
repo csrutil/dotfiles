@@ -18,3 +18,4 @@ brew install bzip2
 brew install p7zip
 brew install mas
 brew install annie
+brew install mediainfo
