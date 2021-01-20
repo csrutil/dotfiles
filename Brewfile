@@ -18,4 +18,5 @@ brew install stress \
               p7zip \
               mas \
               annie \
-              mediainfo
+              mediainfo \
+              the_silver_searcher
