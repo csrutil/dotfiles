@@ -44,6 +44,15 @@ autoload -U colors && colors
 # PROMPT="%{$fg[red]%}%n@%M %{$fg[yellow]%}%~ %{$reset_color%}"
 PROMPT="%{$fg[red]%}%n@%M %{$fg[yellow]%}%~ %{$reset_color%}"
 
+if [[ -f Gemfile ]]; then
+  version=$(cat ~/.rbenv/version)
+
+  if [[ -f .ruby-version ]]; then
+    version=$(cat .ruby-version)
+  fi
+  PROMPT="%{$fg[red]%}%n@%M 💎 $version %{$fg[yellow]%}%~ %{$reset_color%}"
+fi
+
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 [ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
@@ -125,7 +134,7 @@ install_ruby() {
   RUBY_BUILD_MIRROR_URL=http://localhost:9000/ruby-$version.tar.bz2 \
     RUBY_CONFIGURE_OPTS="--disable-install-doc --with-jemalloc --with-openssl-dir=$(brew --prefix libressl)" \
     rbenv install $version --verbose
-  
+
   unset LDFLAGS
   unset CPPFLAGS
 }
