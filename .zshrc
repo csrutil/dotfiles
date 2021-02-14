@@ -175,6 +175,8 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 alias rsync="rsync -ah --progress"
 
+alias mtop="top -stats pid,command,cpu,idlew,power -o power -d -s3"
+
 # https://github.com/BurntSushi/ripgrep
 alias rg="rg -j $(sysctl -n hw.ncpu) -p"
 
