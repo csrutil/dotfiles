@@ -19,4 +19,5 @@ brew install stress \
               mas \
               annie \
               mediainfo \
-              the_silver_searcher
+              the_silver_searcher \
+              watch
