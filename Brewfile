@@ -21,4 +21,5 @@ brew install stress \
               mediainfo \
               the_silver_searcher \
               watch \
-              httrack
+              httrack \
+              smartmontools
