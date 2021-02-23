@@ -20,4 +20,5 @@ brew install stress \
               annie \
               mediainfo \
               the_silver_searcher \
-              watch
+              watch \
+              httrack
