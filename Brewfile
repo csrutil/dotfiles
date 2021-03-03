@@ -16,7 +16,6 @@ brew install stress \
               jq \
               bzip2 \
               p7zip \
-              mas \
               annie \
               mediainfo \
               the_silver_searcher \
