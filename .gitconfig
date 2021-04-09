@@ -6,6 +6,7 @@
 [user]
 	name = sample
 	email = sample@protonmail.com
+	signingkey = xxx
 [branch]
 	autosetuprebase = always
 [alias]
@@ -35,3 +36,7 @@
 	#proxy = socks5://127.0.0.1:1080
   postBuffer = 2097152000
 
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
