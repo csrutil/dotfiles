@@ -271,3 +271,6 @@ fi
 
 # export PATH=$PATH:~/Documents/go/bin
 export EDITOR="emacs -nw"
+
+
+export GPG_TTY=$(tty)
